@@ -187,6 +187,7 @@ func (a *AzLogAnalytics) createClient(ctx context.Context) (*http.Client, error)
 
 func underscoreToCaml(s string) string {
 
+	s = strings.Replace(s, "-", "_", -1)
 	arr := strings.Split(s, "_")
 
 	var buffer bytes.Buffer
